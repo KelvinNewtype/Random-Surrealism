@@ -1,125 +1,121 @@
-:root {
-  --gradient-1: #FF6B6B;
-  --gradient-2: #4ECDC4;
-  --gradient-3: #45B7D1;
-  --gradient-4: #96C93D;
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.8);
+// Enhanced art generation with more surreal elements
+class SurrealistArtGenerator {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext('2d');
+    this.phrases = [
+      "Dreams melt like cosmic butter",
+      "Time is a dancing elephant",
+      "Memories float in digital tea",
+      "The moon whispers in binary",
+      "Reality glitches in purple",
+      "Consciousness spills into fractals"
+    ];
+    this.initializeEffects();
+  }
+
+  initializeEffects() {
+    this.gradients = [];
+    const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96C93D'];
+    for (let i = 0; i < 5; i++) {
+      const gradient = this.ctx.createLinearGradient(
+        Math.random() * this.canvas.width,
+        Math.random() * this.canvas.height,
+        Math.random() * this.canvas.width,
+        Math.random() * this.canvas.height
+      );
+      gradient.addColorStop(0, colors[Math.floor(Math.random() * colors.length)]);
+      gradient.addColorStop(1, colors[Math.floor(Math.random() * colors.length)]);
+      this.gradients.push(gradient);
+    }
+  }
+
+  randomColor(alpha = 1) {
+    return `hsla(${Math.random() * 360}, ${50 + Math.random() * 50}%, ${50 + Math.random() * 50}%, ${alpha})`;
+  }
+
+  drawSurrealistElement() {
+    const x = Math.random() * this.canvas.width;
+    const y = Math.random() * this.canvas.height;
+    
+    // Create more complex shapes
+    this.ctx.beginPath();
+    this.ctx.moveTo(x, y);
+    
+    // Generate random bezier curves
+    for (let i = 0; i < 5; i++) {
+      const cp1x = x + (Math.random() - 0.5) * 200;
+      const cp1y = y + (Math.random() - 0.5) * 200;
+      const cp2x = x + (Math.random() - 0.5) * 200;
+      const cp2y = y + (Math.random() - 0.5) * 200;
+      const endx = x + (Math.random() - 0.5) * 200;
+      const endy = y + (Math.random() - 0.5) * 200;
+      
+      this.ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, endx, endy);
+    }
+    
+    this.ctx.closePath();
+    this.ctx.fillStyle = this.gradients[Math.floor(Math.random() * this.gradients.length)];
+    this.ctx.fill();
+    this.ctx.strokeStyle = this.randomColor(0.8);
+    this.ctx.lineWidth = 2;
+    this.ctx.stroke();
+  }
+
+  addTextureLayer() {
+    const imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
+    const data = imageData.data;
+    
+    for (let i = 0; i < data.length; i += 4) {
+      const noise = Math.random() * 30 - 15;
+      data[i] = Math.min(255, Math.max(0, data[i] + noise));
+      data[i + 1] = Math.min(255, Math.max(0, data[i + 1] + noise));
+      data[i + 2] = Math.min(255, Math.max(0, data[i + 2] + noise));
+    }
+    
+    this.ctx.putImageData(imageData, 0, 0);
+  }
+
+  generate() {
+    // Clear canvas with a gradient background
+    const bgGradient = this.ctx.createLinearGradient(0, 0, this.canvas.width, this.canvas.height);
+    bgGradient.addColorStop(0, this.randomColor(0.9));
+    bgGradient.addColorStop(1, this.randomColor(0.9));
+    this.ctx.fillStyle = bgGradient;
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+    // Generate multiple surrealist elements
+    for (let i = 0; i < 15; i++) {
+      this.drawSurrealistElement();
+    }
+
+    // Add surreal text
+    this.ctx.font = '30px Space Grotesk';
+    this.ctx.fillStyle = this.randomColor(0.8);
+    this.ctx.textAlign = 'center';
+    const phrase = this.phrases[Math.floor(Math.random() * this.phrases.length)];
+    this.ctx.fillText(phrase, this.canvas.width / 2, this.canvas.height / 2);
+
+    // Add texture
+    this.addTextureLayer();
+  }
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background: linear-gradient(
-    125deg,
-    var(--gradient-1),
-    var(--gradient-2),
-    var(--gradient-3),
-    var(--gradient-4)
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  color: var(--text-primary);
-  font-family: 'Space Grotesk', sans-serif;
-  text-align: center;
-}
+// Initialize the generator
+const canvas = document.getElementById('artCanvas');
+const generator = new SurrealistArtGenerator(canvas);
+const generateBtn = document.getElementById('generate-btn');
+const downloadBtn = document.getElementById('download-btn');
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+// Event listeners
+generateBtn.addEventListener('click', () => generator.generate());
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+downloadBtn.addEventListener('click', () => {
+  const link = document.createElement('a');
+  link.download = 'surrealist-art.png';
+  link.href = canvas.toDataURL();
+  link.click();
+});
 
-header {
-  margin-bottom: 3rem;
-}
-
-h1 {
-  font-size: 3.5rem;
-  margin: 0;
-  text-shadow: 0 0 10px rgba(0,0,0,0.2);
-  background: linear-gradient(90deg, #fff, #f0f0f0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.description {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin-top: 1rem;
-}
-
-.controls {
-  margin-bottom: 2rem;
-}
-
-.btn {
-  padding: 1rem 2rem;
-  margin: 0 1rem;
-  font-size: 1.1rem;
-  font-family: inherit;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.primary {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.primary:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.secondary {
-  background: rgba(0, 0, 0, 0.1);
-  color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.secondary:hover {
-  background: rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
-
-.canvas-container {
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-canvas {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-footer {
-  margin-top: 3rem;
-  color: var(--text-secondary);
-}
-
-@media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  .controls { flex-direction: column; }
-  .btn { margin: 0.5rem 0; }
-}
+// Generate initial artwork
+generator.generate();
