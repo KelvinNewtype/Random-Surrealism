@@ -86,6 +86,7 @@ Contributions to Random Surrealism are welcome! If you have ideas to improve the
 ---
 
 ```
+New type Out
 
 ---
 
