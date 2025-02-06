@@ -6,6 +6,10 @@ const ctx = canvas.getContext("2d");
 const generateButton = document.getElementById("generate-btn");
 const downloadButton = document.getElementById("download-btn"); // Get the download button
 
+// Set the desired download resolution (1080p)
+const downloadWidth = 1920;  // 1080p width
+const downloadHeight = 1080; // 1080p height
+
 // Array of weird phrases
 const weirdPhrases = [
   "Cosmic coffee break!",
@@ -31,6 +35,10 @@ function randomColor() {
 
 // Function to draw random shapes and text
 function generateWeirdArt() {
+    // Set canvas dimensions to the download size
+    canvas.width = downloadWidth;
+    canvas.height = downloadHeight;
+
   // Clear the canvas with a random dark background
   ctx.fillStyle = `hsl(${randInt(0, 360)}, ${randInt(30, 60)}%, ${randInt(5, 15)}%)`;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -101,4 +109,4 @@ downloadButton.addEventListener("click", () => {
   link.download = 'surrealist-art.png';
   link.href = canvas.toDataURL();
   link.click();
-});
+})
