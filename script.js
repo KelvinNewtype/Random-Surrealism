@@ -3,7 +3,8 @@
 // Grab our canvas and button elements
 const canvas = document.getElementById("artCanvas");
 const ctx = canvas.getContext("2d");
-const button = document.getElementById("generate-btn");
+const generateButton = document.getElementById("generate-btn");
+const downloadButton = document.getElementById("download-btn"); // Get the download button
 
 // Array of weird phrases
 const weirdPhrases = [
@@ -61,7 +62,7 @@ function generateWeirdArt() {
         let rectWidth = randInt(30, 150);
         let rectHeight = randInt(30, 150);
         ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
-        ctx.strokeRect(rectX, rectY, rectWidth, rectHeight);
+        ctx.strokeRect(rectX, rectY, rectWidth, rectWidth); //Corrected Height for stroke
         break;
       case 3:
         // Triangle
@@ -91,5 +92,13 @@ function generateWeirdArt() {
   ctx.fillText(phrase, textX, textY);
 }
 
-// Event listener for the button click
-button.addEventListener("click", generateWeirdArt);
+// Event listener for the generate button click
+generateButton.addEventListener("click", generateWeirdArt);
+
+// Event listener for the download button click
+downloadButton.addEventListener("click", () => {
+  const link = document.createElement('a');
+  link.download = 'surrealist-art.png';
+  link.href = canvas.toDataURL();
+  link.click();
+});
