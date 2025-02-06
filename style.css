@@ -72,7 +72,7 @@ main {
 /* Button Styles */
 .button-container {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* This line centers the buttons horizontally */
     gap: 20px;
     margin-top: 2rem;
 }
