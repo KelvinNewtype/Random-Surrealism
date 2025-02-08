@@ -72,6 +72,8 @@ RandomSurrealism/
 
 Contributions to Random Surrealism are welcome! If you have ideas to improve the project or want to add new features, feel free to fork the repository, make your changes, and submit a pull request.
 
+**Add favicon**
+
 ---
 
 ## 🙌 Acknowledgments
