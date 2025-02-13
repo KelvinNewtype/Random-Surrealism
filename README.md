@@ -76,7 +76,7 @@ Contributions are welcome! If you have ideas to enhance the project or wish to a
 - **Add a favicon** for a more polished look.
 - **Implement additional shape types** to expand the visual variety.
 - **Introduce animation effects** for more dynamic surrealism.
-
+- **Implement signatures** to create a sense of individualism.
 ---
 
 ## 🙌 Acknowledgments
