@@ -51,6 +51,8 @@ main {
   max-width: 900px;
   padding: 20px;
   margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto; /* Centers the main container */
 }
 
 /* Canvas Styles */
@@ -63,6 +65,7 @@ main {
   max-width: 900px; /* Match max-width of main container */
   height: auto; /* Maintain aspect ratio */
   display: block; /* Removes extra space below canvas */
+  margin: 0 auto; /* Center canvas horizontally */
 }
 
 #artCanvas:hover {
@@ -72,11 +75,11 @@ main {
 /* Button Styles */
 .button-container {
     display: flex;
-    justify-content: center; /* Centers buttons horizontally */
-    align-items: center; /* Centers buttons vertically */
+    justify-content: center; /* Center buttons horizontally */
     gap: 20px;
     margin-top: 2rem;
-    width: 100%; /* Ensures container spans full width */
+    width: 100%; /* Ensure container spans full width */
+    text-align: center;
 }
 
 button {
