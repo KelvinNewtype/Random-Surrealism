@@ -2,7 +2,7 @@ I need to center the btn
 Add some realism as well 
 # 🎨 Random Surrealism
 
-Random Surrealism is a canvas art generator that transforms your screen into a dynamic playground of random shapes, vibrant colors, and surreal phrases. Built with pure HTML, CSS, and JavaScript, this project embraces randomness and creativity to produce quirky, ever-changing visuals.
+Random Surrealism is a art generator that transforms your screen into a dynamic playground of random shapes, vibrant colors, and surreal phrases. Built with pure HTML, CSS, and JavaScript, this project embraces randomness and creativity to produce quirky, ever-changing visuals.
 
 ---
 
