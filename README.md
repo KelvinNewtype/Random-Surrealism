@@ -1,5 +1,5 @@
 I need to center the button
-Add some realism to art
+Add some realism to art generation
 # 🎨 Random Surrealism
 
 Random Surrealism is a art generator that transforms your screen into a dynamic playground of random shapes, vibrant colors, and surreal phrases. Built with just HTML, CSS, and JavaScript, this project embraces randomness and creativity to produce quirky, ever-changing visuals.
