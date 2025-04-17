@@ -1,4 +1,4 @@
-center the button
+Animate and center the button 
 Add some realism to art generation
 # 🎨 Random Surrealism
 
