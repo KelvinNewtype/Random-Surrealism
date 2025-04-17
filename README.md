@@ -1,3 +1,4 @@
+Not just random shapes but allow users a bit of choice 
 Animate and center the button 
 Maybe add resolutions to art
 Add some realism to art generation
