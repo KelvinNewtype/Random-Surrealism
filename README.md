@@ -37,7 +37,7 @@ Random Surrealism is a art generator that transforms your screen into a dynamic 
 
 ## 🎨 Styling & Aesthetics
 
-The project employs simple but effective CSS techniques to enhance its artistic feel:
+This project employs simple but effective CSS  to enhance its artistic feel:
 
 - **Pixelated Canvas** – The `image-rendering: pixelated` property enhances the retro aesthetic.
 - **Bold, Vibrant Colors** – A dynamic color scheme ensures engaging visuals.
