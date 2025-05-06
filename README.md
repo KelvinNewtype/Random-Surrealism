@@ -1,4 +1,4 @@
-Not just random shapes but allow users a bit of choice 
+Not just random shapes but allow users a bit of choice. Fix later 
 Animate and center the button 
 Maybe add resolutions to art
 # 🎨 Random Surrealism
