@@ -3,7 +3,7 @@ Animate and center the button
 add resolutions to art
 # 🎨 Random Surrealism
 
-Random Surrealism is a art generator that transforms your screen into a dynamic playground of random shapes, lively colors, and surreal phrases. Built with just HTML, CSS, and JavaScript, this project embraces randomness and creativity to produce quirky, ever-changing visuals.
+Random Surrealism is a art generator that transforms your screen into a dynamic playground of random shapes, lively colors, and surreal phrases. Built with HTML, CSS, and JavaScript, this project embraces randomness and creativity to produce quirky, ever-changing visuals.
 
 ---
 
