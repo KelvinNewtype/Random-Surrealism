@@ -39,7 +39,7 @@ This project employs simple but effective CSS  to enhance its artistic feel:
 - **Pixelated Canvas** – The `image-rendering: pixelated` property enhances the retro aesthetic.
 - **Bold, Vibrant Colors** – A dynamic color scheme ensures beautiful visuals.
 - **Responsive Layout** – The UI is optimized for both desktop and mobile screens.
-- **Creative Typography** – Fonts like `Courier New` add to the artistic, experimental vibe.
+- **Creative Typography** – Fonts like "Courier New" add to the artistic, experimental vibe.
 
 ---
 
