@@ -8,7 +8,7 @@ Random Surrealism is an art generator that transforms your screen into a dynamic
 
 - 🎲 **Random Shapes** – Generates circles, rectangles, and triangles at unpredictable positions on the canvas.
 - 🌈 **Dynamic Colors** – Features an ever-changing, vibrant color palette for both shapes and backgrounds.
-- 💬 **Surreal Phrases** – Displays offbeat, quirky phrases in unexpected spots to enhance the artistic chaos.
+- 💬 **Quirky Phrases** – Displays offbeat, quirky phrases in unexpected spots to enhance the artistic chaos.
 - 🖼️ **Canvas-Based Rendering** – Utilizes HTML5 canvas for dynamic, interactive art generation.
 - 🎨 **Retro Pixel Aesthetic** – Styled with a pixelated effect to evoke a nostalgic, old-school digital art feel.
 
