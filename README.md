@@ -70,7 +70,7 @@ To run Random Surrealism on your local machine:
 
 ## 🤝 Contributions
 
-Contributions are welcome! If you have ideas to enhance the project or wish to add new features:
+Contributions are very welcome! If you have ideas to enhance the project or wish to add new features:
 
 1. **Fork** the repository.
 2. **Make your changes** and ensure they align with the project's artistic direction.
