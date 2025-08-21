@@ -1,6 +1,6 @@
 # 🎨 Random Surrealism
 
-Random Surrealism is a random shape generator that transforms your screen into a dynamic playground of random shapes, vibrant colors, and surreal phrases. Built with HTML, CSS, and JavaScript, this project embraces randomness and creativity to produce quirky, ever-changing visuals and graphics.
+The Random Surrealism Project is a random shape generator that transforms your screen into a dynamic playground of random shapes, vibrant colors, and surreal phrases. Built with HTML, CSS, and JavaScript, this project embraces randomness and creativity to produce quirky, ever-changing visuals and graphics.
 
 ---
 
