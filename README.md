@@ -4,7 +4,7 @@ The Random Surrealism Project is a random shape generator that transforms your s
 
 ---
 
-## ✨ Features
+##  Features
 
 - 🎲 **Random Shapes** – Generates circles, rectangles, and triangles at unpredictable positions on the canvas.
 - 🌈 **Energetic Colors** – Features an ever-changing, vibrant color palette for both shapes and backgrounds.
@@ -32,7 +32,7 @@ The Random Surrealism Project is a random shape generator that transforms your s
 
 ---
 
-## 🎨 Styling & Aesthetics
+##  Styling & Aesthetics
 
 This project employs simple but effective CSS  to enhance its artistic feel:
 
