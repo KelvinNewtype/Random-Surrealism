@@ -9,8 +9,8 @@ The Random Surrealism Project is a random shape generator that transforms your s
 -  **Random Shapes** – Generates circles, rectangles, and triangles at unpredictable positions on the canvas.
 - **Energetic Colors** – Features an ever-changing, vibrant color palette for both shapes and backgrounds.
 -  **Quirky Phrases** – Displays offbeat, quirky phrases in unexpected spots to enhance the artistic chaos.
-- 🖼️ **Canvas-Based Rendering** – Utilizes HTML5 canvas for dynamic, interactive art generation.
-- 🎨 **Retro Pixel Aesthetic** – Styled with a pixelated effect to evoke a nostalgic, old-school digital art feel.
+- **Canvas-Based Rendering** – Utilizes HTML5 canvas for dynamic, interactive art generation.
+- **Retro Pixel Aesthetic** – Styled with a pixelated effect to evoke a nostalgic, old-school digital art feel.
 
 ---
 
