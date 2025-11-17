@@ -18,6 +18,7 @@ const weirdPhrases = [
   "Reality is melting",
   "Time for a quantum banana",
   "Whispering shadows of forgotten code"
+  "There are rings of wakefulness embedded"
 ];
 
 // This Function to generate a random integer between min and max
