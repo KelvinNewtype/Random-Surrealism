@@ -10,7 +10,7 @@ This application transforms a user's screen into a customizable visual space, ap
 
 The efficacy of the rendering engine can be observed via the live deployment:
 
-[Link to Live Demo (e.g., GitHub Pages, Vercel, Netlify)]
+[(https://random-surrealism.vercel.app/)]
 
 [**Image:** A clear, high-resolution screenshot of the application's interface showcasing a complex generated artwork.]
 *(Ensure the screenshot reflects a professional aesthetic)*
