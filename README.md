@@ -77,4 +77,3 @@ This project is currently provided without a formal license.
 ---
 
 **NEWTYPE OUT**
-*A front-end development project utilizing core web standards.*
