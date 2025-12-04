@@ -1,3 +1,7 @@
+// ============================================
+// ETHEREAL CANVAS - Premium Art Generator
+// ============================================
+
 const canvas = document.getElementById("artCanvas");
 const ctx = canvas.getContext("2d");
 const generateButton = document.getElementById("generate-btn");
