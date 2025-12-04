@@ -1,102 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Primary SEO meta -->
-  <meta name="description" content="Generate stunning surrealist art instantly with AI. Create, customize, and download abstract dreamlike artwork for free. Perfect for artists, designers, and creative minds.">
-  <meta name="keywords" content="AI art generator, surrealism generator, surrealist art, abstract art, weird art, dream art, AI artwork, free art tool, random art generator">
-  <meta name="author" content="Kelvin Ola">
-  
-  <!-- Open Graph (OG) meta for social sharing -->
-  <meta property="og:title" content="Random Surrealism Generator | Free AI Art Creator">
-  <meta property="og:description" content="Create bizarre and beautiful surrealist art with a single click. 100% free surrealism generator.">
-  <meta property="og:image" content="preview.jpg">
-  <meta property="og:image:alt" content="AI-generated surrealist artwork showing abstract shapes and dreamlike imagery">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourwebsite.com">
-
-  <!-- Twitter Card meta -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Random Surrealism Generator | Free AI Art Tool">
-  <meta name="twitter:description" content="Instantly generate surrealist art with AI. Abstract, weird, and dreamlike — create and download your masterpiece for free.">
-  <meta name="twitter:image" content="preview.jpg">
-  <meta name="twitter:image:alt" content="AI-generated surrealist artwork example">
-
-  <title>Random Surrealism Generator | Free AI Surrealist Art Creator</title>
-
-  <link rel="canonical" href="https://yourwebsite.com">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Generate stunning surrealist art instantly with AI. Create, customize, and download abstract dreamlike artwork for free. Perfect for artists, designers, and creative minds.">
+    <meta name="keywords" content="AI art generator, surrealism generator, surrealist art, abstract art, weird art, dream art, AI artwork, free art tool, random art generator">
+    <meta name="author" content="Kelvin Newtype">
+    
+    <meta property="og:title" content="Ethereal Canvas | Premium AI Art Generator">
+    <meta property="og:description" content="Create baroque and beautiful surrealist art with a single click. Premium surrealism generator.">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ethereal Canvas | Premium AI Art Generator">
+    
+    <title>Random Surrealism | Premium Surrealist Art Generator</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Skip link for accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  
-  <div class="container" role="document">
-    <header role="banner">
-      <h1>Random Surrealism Generator</h1>
-      <p class="description">Generate one-of-a-kind surrealist art that blurs the line between dreams and reality. Powered by AI-inspired randomness.</p>
-    </header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <main id="main-content" role="main">
-      <div class="controls" role="group" aria-label="Art generation controls">
-        <button 
-          id="generate-btn" 
-          class="btn primary"
-          aria-label="Generate new surrealist artwork"
-        >
-          Weirdify
-        </button>
-        <button 
-          id="download-btn" 
-          class="btn secondary"
-          aria-label="Download current artwork"
-          disabled
-        >
-          Download Artwork
-        </button>
-      </div>
-      
-      <div class="canvas-container">
-        <div role="status" aria-live="polite" id="generation-status" class="visually-hidden"></div>
+    <div class="container" role="document">
+        <header role="banner">
+            <h1>Random Surrealism</h1>
+            <p class="description">Generate exquisite surrealist masterpieces that transcend the boundaries between dreams and reality. Each creation is a unique journey into the sublime.</p>
+        </header>
         
-        <canvas 
-          id="artCanvas" 
-          width="800" 
-          height="600"
-          role="img"
-          aria-label="Generated surrealist artwork"
-          tabindex="0"
-        >
-          Your browser does not support canvas. Please use a modern browser to view the generated artwork.
-        </canvas>
-      </div>
+        <main id="main-content" role="main">
+            <div class="controls" role="group" aria-label="Art generation controls">
+                <button 
+                    id="generate-btn" 
+                    class="btn primary"
+                    aria-label="Generate new surrealist artwork"
+                >
+                     Create Masterpiece
+                </button>
+                <button 
+                    id="download-btn" 
+                    class="btn secondary"
+                    aria-label="Download current artwork"
+                >
+                     Download Art
+                </button>
+            </div>
+            
+            <div class="canvas-container">
+                <div role="status" aria-live="polite" id="generation-status" class="visually-hidden"></div>
+                
+                <canvas 
+                    id="artCanvas" 
+                    width="1920" 
+                    height="1080"
+                    role="img"
+                    aria-label="Generated surrealist artwork"
+                    tabindex="0"
+                >
+                    Your browser does not support canvas. Please use a modern browser to view the generated artwork.
+                </canvas>
+            </div>
 
-      <div id="artwork-description" class="visually-hidden" aria-live="polite"></div>
-    </main>
-    
-    <footer role="contentinfo">
-      <p>Created with <span role="img" aria-label="spiral emoji">🌀</span> by <strong>Kelvin Ola</strong> — explore more at <a href="https://yourwebsite.com">yourwebsite.com</a></p>
-    </footer>
-  </div>
+            <div id="artwork-description" class="visually-hidden" aria-live="polite"></div>
+        </main>
+        
+        <footer role="contentinfo">
+            <p>Crafted with <span role="img" aria-label="sparkles">✨</span> by <strong><a href="https://x.com/KelvinNewtype">Kelvin Newtype</a></strong> — explore more about this project <a href="https://github.com/KelvinNewtype/Random-Surrealism">here</a></p>
+        </footer>
+    </div>
 
-  <div class="visually-hidden">
-    <h2>Keyboard Controls:</h2>
-    <ul>
-      <li>Press Space or Enter on the Generate button to create new artwork</li>
-      <li>Press Space or Enter on the Download button to save the current artwork</li>
-      <li>Use Tab to navigate between interactive elements</li>
-    </ul>
-  </div>
-
-  <script src="script.js"></script>
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
