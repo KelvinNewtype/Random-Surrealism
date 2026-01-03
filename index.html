@@ -21,9 +21,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
+    <!-- Tailwind / Vite entry CSS -->
+    <link rel="stylesheet" href="/src/index.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- React root (React will mount the app). -->
+    <div id="root"></div>
     
     <div class="container" role="document">
         <header role="banner">
@@ -72,7 +76,8 @@
         </footer>
     </div>
 
-<script src="script.js"></script>
+        <!-- Vite / React entry (dev) -->
+        <script type="module" src="/src/main.jsx"></script>
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
