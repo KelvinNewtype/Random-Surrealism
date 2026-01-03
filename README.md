@@ -6,14 +6,14 @@ This application transforms a user's screen into a customizable visual space, ap
 
 ---
 
-## 💻 Live Demonstration
+## Live Demonstration
 
 The efficacy of the rendering engine can be observed via the live deployment:
 
 [(https://random-surrealism.vercel.app/)]
 ---
 
-## 🔑 Technical Capabilities & Features
+## Technical Capabilities & Features
 
 The project serves as a showcase of competence in several key front-end disciplines:
 
@@ -27,7 +27,7 @@ The project serves as a showcase of competence in several key front-end discipli
 
 ---
 
-## 🛠️ Project Structure
+## Project Structure
 
 The codebase is organized using the standard three-file architecture for clarity and maintainability:
 
@@ -70,7 +70,7 @@ Please submit detailed Pull Requests for review.
 
 ---
 
-## ©️ License
+## License
 
 This project is currently provided without a formal license.
 
