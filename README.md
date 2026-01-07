@@ -58,7 +58,7 @@ To initiate local development or testing of the rendering engine:
 
 ---
 
-## 💡 Contribution Guidelines
+## Contribution Guidelines
 
 We welcome collaboration from developers seeking to expand the project's technical scope. Potential contributions include:
 
