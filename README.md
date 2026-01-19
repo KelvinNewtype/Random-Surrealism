@@ -76,4 +76,3 @@ This project is currently provided without a formal license.
 
 ---
 
-**NEWTYPE OUT**
