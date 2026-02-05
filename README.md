@@ -72,7 +72,7 @@ Please submit detailed Pull Requests for review.
 
 ## License
 
-This project is currently provided without a formal license.
+This project is provided without a formal license.
 
 ---
 
