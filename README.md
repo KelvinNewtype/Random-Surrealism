@@ -149,7 +149,9 @@ Geometry Module
 
 Shape generation algorithms
 
+
 Position and scale randomization
+
 
 Spacing control
 
