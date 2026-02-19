@@ -22,7 +22,7 @@ Random Surrealism is a browser-based generative art platform that transforms the
 - Utility-driven vibrant color management  
 - Retro pixel effects using `image-rendering: pixelated`  
 - Responsive canvas scaling  
-- Integrated typography overlays  
+- Integrated typography overlays
 
 ### User Interaction & Output
 - Interactive generation controls  
