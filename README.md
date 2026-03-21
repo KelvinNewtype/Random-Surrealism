@@ -3,7 +3,6 @@
 A modern, canvas-based creative application designed to procedurally generate unique abstract artwork. Built with a clean separation of concerns, featuring high-performance rendering, responsive scaling, and dynamic visual composition.
 
 
-
 ---
 
 ## Project Overview
