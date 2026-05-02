@@ -1,11 +1,9 @@
 /**
  * RANDOM SURREALISM - CENTRAL STATE ARCHITECTURE
- * Implementation of the Observer Pattern for Vanilla JS
  */
 
 // --- 1. THE CENTRAL STORE ---
 const Store = {
-    // The Data
     state: {
         isGenerating: false,
         currentPhrase: "",
@@ -14,21 +12,14 @@ const Store = {
         canvasHeight: 1080,
         timestamp: null
     },
-
-    // The Observers (Functions that run when state changes)
     listeners: [],
-
-    // The Dispatcher (Updates state and notifies everyone)
     setState(newState) {
         this.state = { ...this.state, ...newState };
         this.notify();
     },
-
-    // The Subscription Mechanism
     subscribe(callback) {
         this.listeners.push(callback);
     },
-
     notify() {
         this.listeners.forEach(callback => callback(this.state));
     }
@@ -41,7 +32,7 @@ const generateButton = document.getElementById("generate-btn");
 const downloadButton = document.getElementById("download-btn");
 const statusElement = document.getElementById("generation-status");
 
-// --- 3. DATA ASSETS (Constants) ---
+// --- 3. DATA ASSETS ---
 const etherealPhrases = ["Whispers of Eternity", "Dreams in Technicolor", "The Architecture of Silence", "Echoes from the Void", "Fragments of Tomorrow", "The Weight of Starlight", "Memories Yet to Come", "Dancing with Shadows", "The Geometry of Souls", "Temporal Resonance"];
 
 const colorPalettes = [
@@ -52,40 +43,51 @@ const colorPalettes = [
     { name: "Sunset Ember", colors: ["#E63946", "#F77F00", "#FCBF49", "#EAE2B7", "#D4A574"], bg: "#1A0F0A" }
 ];
 
-// --- 4. DRAWING MODULES (Stateless Functions) ---
-// Note: These functions now receive their data from the state rather than global variables
-function randInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
-function randFloat(min, max) { return Math.random() * (max - min) + min; }
-function randomFromArray(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-function hexToRgba(hex, alpha = 1) {
+// --- 4. UTILITY & DRAWING FUNCTIONS ---
+// (We keep these mostly the same, ensuring they use the global ctx)
+const randInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const randFloat = (min, max) => Math.random() * (max - min) + min;
+const randomFromArray = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const hexToRgba = (hex, alpha = 1) => {
     const r = parseInt(hex.slice(1, 3), 16);
     const g = parseInt(hex.slice(3, 5), 16);
     const b = parseInt(hex.slice(5, 7), 16);
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
+function drawCircle(x, y, radius, color, palette) {
+    const gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+    gradient.addColorStop(0, hexToRgba(color, 0.9));
+    gradient.addColorStop(1, hexToRgba(randomFromArray(palette.colors), 0.3));
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fill();
 }
 
-// ... [Keep your drawCircle, drawRectangle, drawTriangle, drawPolygon, drawBezierCurve functions here] ...
-// (The logic inside them remains the same as your original JS)
+// [Note: Re-include your drawRectangle, drawTriangle, etc. here using the global ctx]
 
-// --- 5. THE SUBSCRIBERS (Reactive UI) ---
+// --- 5. THE SUBSCRIBERS (Reaction Logic) ---
 
-// UI Subscriber: Handles buttons and status text
+// **Subscriber A: Update UI Elements**
 Store.subscribe((state) => {
+    generateButton.disabled = state.isGenerating;
+    downloadButton.disabled = state.isGenerating;
+    
     if (state.isGenerating) {
         generateButton.classList.add('loading');
-        generateButton.disabled = true;
-        downloadButton.disabled = true;
+        statusElement.textContent = "Generating masterpiece...";
     } else {
         generateButton.classList.remove('loading');
-        generateButton.disabled = false;
-        downloadButton.disabled = false;
-        statusElement.textContent = `New artwork generated: ${state.currentPhrase}`;
+        if (state.currentPhrase) {
+            statusElement.textContent = `Art generated: ${state.currentPhrase}`;
+        }
     }
 });
 
-// Canvas Subscriber: Handles the actual drawing
+// **Subscriber B: Trigger Canvas Redraw**
 Store.subscribe((state) => {
-    // Only trigger a full redraw if we have a palette and aren't mid-process
+    // We only draw when isGenerating becomes false AND we have a palette
     if (!state.isGenerating && state.currentPalette) {
         renderArt(state);
     }
@@ -94,23 +96,30 @@ Store.subscribe((state) => {
 // --- 6. CORE LOGIC ---
 
 function triggerGeneration() {
-    // 1. Update state to "Generating"
-    Store.setState({
+    // Start generating
+    Store.setState({ 
         isGenerating: true,
-        currentPalette: randomFromArray(colorPalettes),
-        currentPhrase: randomFromArray(etherealPhrases),
-        timestamp: new Date().getTime()
+        timestamp: new Date().getTime() 
     });
 
-    // 2. Simulate processing delay
+    // Pick data
+    const newPalette = randomFromArray(colorPalettes);
+    const newPhrase = randomFromArray(etherealPhrases);
+
+    // Artificial delay for "Premium" feel and to allow UI to update
     setTimeout(() => {
-        Store.setState({ isGenerating: false });
-    }, 500);
+        Store.setState({ 
+            isGenerating: false, 
+            currentPalette: newPalette, 
+            currentPhrase: newPhrase 
+        });
+    }, 600);
 }
 
 function renderArt(state) {
     const { currentPalette, currentPhrase, canvasWidth, canvasHeight } = state;
-    
+
+    // Reset Canvas
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
 
@@ -121,43 +130,30 @@ function renderArt(state) {
     ctx.fillStyle = bgGradient;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-    // Add Noise Texture
-    for (let i = 0; i < 5000; i++) {
-        ctx.fillStyle = `rgba(255, 255, 255, ${randFloat(0.01, 0.05)})`;
-        ctx.fillRect(randInt(0, canvasWidth), randInt(0, canvasHeight), 1, 1);
-    }
-
-    // Draw Randomized Shapes
-    const shapeCount = randInt(8, 20);
-    for (let i = 0; i < shapeCount; i++) {
+    // Draw Shapes (Example Loop)
+    for (let i = 0; i < randInt(10, 20); i++) {
         const color = randomFromArray(currentPalette.colors);
-        const type = randInt(1, 5);
-        // ... call your draw functions using state.currentPalette ...
-        if (type === 1) drawCircle(randInt(0, canvasWidth), randInt(0, canvasHeight), randInt(40, 200), color, currentPalette);
-        // [Add other shape types here as per original code]
+        drawCircle(randInt(0, canvasWidth), randInt(0, canvasHeight), randInt(50, 300), color, currentPalette);
     }
 
-    // Draw Text
-    ctx.font = `${randInt(40, 80)}px 'Playfair Display', serif`;
-    ctx.fillStyle = hexToRgba(randomFromArray(currentPalette.colors), 0.8);
+    // Draw Text Overlay
+    ctx.font = `${randInt(50, 90)}px 'Playfair Display', serif`;
+    ctx.fillStyle = hexToRgba(randomFromArray(currentPalette.colors), 0.9);
     ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+    ctx.shadowBlur = 15;
     ctx.fillText(currentPhrase, canvasWidth / 2, canvasHeight / 2);
 }
 
-function downloadArt() {
+// --- 7. INITIALIZATION ---
+generateButton.addEventListener('click', triggerGeneration);
+downloadButton.addEventListener('click', () => {
     const link = document.createElement('a');
-    link.download = `ethereal-${Store.state.timestamp}.png`;
+    link.download = `surrealism-${Store.state.timestamp}.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
-}
-
-// --- 7. EVENT LISTENERS ---
-generateButton.addEventListener('click', triggerGeneration);
-downloadButton.addEventListener('click', downloadArt);
-
-window.addEventListener('load', triggerGeneration);
-
-document.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === 'g') triggerGeneration();
-    if (e.key.toLowerCase() === 'd') downloadArt();
 });
+
+// Initial load
+window.addEventListener('load', triggerGeneration);
