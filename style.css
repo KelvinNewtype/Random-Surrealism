@@ -446,6 +446,42 @@ footer strong {
     }
 }
 
+.settings-panel {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space-md);
+    border-radius: 16px;
+    margin-bottom: var(--space-lg);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: var(--champagne);
+    font-size: 0.9rem;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-small:hover {
+    background: var(--gold);
+    color: var(--midnight);
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     *,
