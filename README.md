@@ -4,7 +4,6 @@ A modern, canvas-based creative application designed to procedurally generate un
 
 ---
 
-
 ## Project Overview
 
 Random Surrealism is a browser-based generative art platform that transforms the user’s screen into a customizable creative environment. The application applies controlled randomness to geometry, color theory, and typography to produce visually distinctive compositions in real time.
