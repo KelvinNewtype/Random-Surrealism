@@ -80,7 +80,6 @@ Readability-focused contrast
 
 Responsive font scaling
 
-
 Visual Components
 
 Procedural geometric shapes
