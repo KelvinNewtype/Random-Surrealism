@@ -47,6 +47,7 @@ random-surrealism/
 
 Design Principles
 
+
 Separation of structure, presentation, and logic
 
 Framework-free vanilla JavaScript
